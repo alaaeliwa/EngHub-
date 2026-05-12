@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/dashboard.css" />
+    <link rel="stylesheet" href="../style/upload-materials.css" />
+
+    <title>Upload Materials | EngHub</title>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <img src="../images/logo.png" alt="EngHub logo" />
+          </a>
+          <button id="sidebarClose" class="mobile-only btn-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="courses.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Courses & Materials</a>
+            <a href="workshops.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Workshops & Events</a>
+            <a href="search.html" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Search Functionality</a>
+            <a href="upload-materials.html" class="nav-item active upload-nav"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Materials</a>
+            <a href="p" class="nav-item"><i class="fa-solid fa-person-chalkboard"></i> Peer Teaching</a>
+          </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+          <a href="login.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+          <div class="top-nav-left">
+            <button id="sidebarToggle" class="mobile-only btn-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="breadcrumb">
+               <span>Upload Materials</span>
+            </div>
+          </div>
+          <div class="top-nav-right">
+             <div class="user-profile">
+               <div class="user-info">
+                 <span class="user-name">Alaa Eliwa</span>
+                 <span class="user-role">Contributor</span>
+               </div>
+               <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff" alt="User"></div>
+             </div>
+          </div>
+        </header>
+
+        <div class="content-body">
+          <section class="upload-container">
+            <div class="upload-header animate-in">
+              <h1>Upload Study Materials</h1>
+              <p>Share your knowledge with the community. Help your peers excel by uploading useful summaries, notes, or exams.</p>
+            </div>
+
+            <form id="uploadMaterialForm" class="modern-upload-form">
+              <!-- Section 1: Course Info -->
+              <div class="form-card animate-in">
+                <div class="card-header">
+                  <i class="fa-solid fa-book"></i>
+                  <h3>Course Information</h3>
+                </div>
+                <div class="card-body grid-2">
+                  <div class="input-group">
+                    <label for="courseName">Course Name <span class="required">*</span></label>
+                    <input type="text" id="courseName" placeholder="e.g. Data Structures" required>
+                  </div>
+                  <div class="input-group">
+                    <label for="courseCode">Course Code <span class="required">*</span></label>
+                    <input type="text" id="courseCode" placeholder="e.g. CS202" required>
+                  </div>
+                  <div class="input-group">
+                    <label for="academicYear">Academic Year <span class="required">*</span></label>
+                    <select id="academicYear" required>
+                      <option value="">Select Year</option>
+                      <option value="1">1st Year</option>
+                      <option value="2">2nd Year</option>
+                      <option value="3">3rd Year</option>
+                      <option value="4">4th Year</option>
+                    </select>
+                  </div>
+                  <div class="input-group">
+                    <label for="semester">Semester <span class="required">*</span></label>
+                    <select id="semester" required>
+                      <option value="">Select Semester</option>
+                      <option value="1">1st Semester</option>
+                      <option value="2">2nd Semester</option>
+                      <option value="summer">Summer Semester</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 2: Material Details -->
+              <div class="form-card animate-in" style="animation-delay: 0.1s;">
+                <div class="card-header">
+                  <i class="fa-solid fa-file-lines"></i>
+                  <h3>Material Details</h3>
+                </div>
+                <div class="card-body">
+                  <div class="input-group full-width">
+                    <label for="materialType">Material Type <span class="required">*</span></label>
+                    <div class="type-selector">
+                      <label class="type-btn">
+                        <input type="radio" name="materialType" value="pdf" checked>
+                        <span><i class="fa-solid fa-file-pdf"></i> Summary</span>
+                      </label>
+                      <label class="type-btn">
+                        <input type="radio" name="materialType" value="notes">
+                        <span><i class="fa-solid fa-note-sticky"></i> Notes</span>
+                      </label>
+                      <label class="type-btn">
+                        <input type="radio" name="materialType" value="exam">
+                        <span><i class="fa-solid fa-pen-to-square"></i> Exam Bank</span>
+                      </label>
+                      <label class="type-btn">
+                        <input type="radio" name="materialType" value="slides">
+                        <span><i class="fa-solid fa-file-powerpoint"></i> Slides</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="input-group full-width">
+                    <label for="materialTitle">Title <span class="required">*</span></label>
+                    <input type="text" id="materialTitle" placeholder="e.g. Chapter 3: Linked Lists Summary" required>
+                  </div>
+                  <div class="input-group full-width">
+                    <label for="materialDesc">Description</label>
+                    <textarea id="materialDesc" rows="3" placeholder="Briefly describe what this material covers..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 3: Content Upload -->
+              <div class="form-card animate-in" style="animation-delay: 0.2s;">
+                <div class="card-header">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <h3>Content Source</h3>
+                </div>
+                <div class="card-body">
+                  <div class="upload-tabs">
+                    <button type="button" class="tab-btn active" data-source="file">Upload File</button>
+                    <button type="button" class="tab-btn" data-source="link">External Link</button>
+                  </div>
+
+                  <div id="fileUploadSource" class="source-view active">
+                    <div class="drop-zone" id="dropZone">
+                      <i class="fa-solid fa-file-circle-plus"></i>
+                      <p>Drag & drop file here or <span>browse</span></p>
+                      <small>PDF, DOCX, PPT, or ZIP (Max 20MB)</small>
+                      <input type="file" id="fileInput" hidden>
+                    </div>
+                    <div id="filePreview" class="file-preview" style="display: none;">
+                       <i class="fa-solid fa-file-pdf"></i>
+                       <span id="fileName">Selected_File.pdf</span>
+                       <button type="button" id="removeFile"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                  </div>
+
+                  <div id="linkUploadSource" class="source-view">
+                    <div class="input-group">
+                      <label for="externalUrl">External URL</label>
+                      <input type="url" id="externalUrl" placeholder="https://drive.google.com/...">
+                      <p class="input-hint">Provide a link to Google Drive, Dropbox, or YouTube.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 4: Settings -->
+              <div class="form-card animate-in" style="animation-delay: 0.3s;">
+                <div class="card-header">
+                  <i class="fa-solid fa-sliders"></i>
+                  <h3>Settings & Visibility</h3>
+                </div>
+                <div class="card-body grid-2">
+                  <div class="input-group">
+                    <label>Visibility</label>
+                    <select id="visibility">
+                      <option value="public">Public (Anyone can see)</option>
+                      <option value="private">Private (Only me)</option>
+                    </select>
+                  </div>
+                  <div class="input-group">
+                    <label>Allow Download</label>
+                    <div class="toggle-group">
+                      <label class="toggle-switch">
+                        <input type="checkbox" checked id="allowDownload">
+                        <span class="slider"></span>
+                      </label>
+                      <span class="toggle-label">Yes, allow others to download</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Form Actions -->
+              <div class="upload-actions animate-in" style="animation-delay: 0.4s;">
+                <button type="button" class="btn btn-outline" onclick="history.back()">Cancel</button>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <i class="fa-solid fa-cloud-arrow-up"></i> Submit Material
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <footer class="dashboard-footer">
+          <p>&copy; 2026 EngHub Dashboard. Engineering Excellence.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/upload-materials.js"></script>
+  </body>
+</html>
