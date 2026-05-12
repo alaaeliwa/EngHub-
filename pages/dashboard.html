@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/dashboard.css" />
+
+    <title>Dashboard | EngHub</title>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <img src="../images/logo.png" alt="EngHub logo" />
+          </a>
+          <button id="sidebarClose" class="mobile-only btn-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="dashboard.html" class="nav-item active"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="courses.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Courses & Materials</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Workshops & Events</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Search Functionality</a>
+            <a href="#" class="nav-item upload-nav"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Materials</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-person-chalkboard"></i> Peer Teaching</a>
+          </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+          <a href="login.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+          <div class="top-nav-left">
+            <button id="sidebarToggle" class="mobile-only btn-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="search-bar">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search courses, summaries, PDFs..." />
+            </div>
+          </div>
+          
+          <div class="top-nav-right">
+            <button class="btn-icon notification-btn">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notification-badge"></span>
+            </button>
+            <div class="user-profile">
+              <div class="user-info">
+                <span class="user-name">Alaa Eliwa</span>
+                <span class="user-role">Software Engineering</span>
+              </div>
+              <div class="user-avatar">
+                <img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff" alt="User Avatar" />
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="content-body">
+          <!-- Welcome Section -->
+          <section class="welcome-section animate-in">
+            <div class="welcome-text">
+              <h1>Welcome back, Alaa 👋</h1>
+              <p>Ready to continue learning today? You have 3 new notifications.</p>
+              <div class="user-meta">
+                <span class="meta-item"><i class="fa-solid fa-graduation-cap"></i> 4th Year</span>
+                <span class="meta-item"><i class="fa-solid fa-microchip"></i> Software Engineering</span>
+              </div>
+            </div>
+          </section>
+          <!-- Dashboard Grid -->
+          <div class="dashboard-grid">
+            <!-- Left Column: Materials & Courses -->
+            <div class="grid-column">
+              <!-- Recently Added Materials -->
+              <section class="section-block animate-in">
+                <div class="section-header">
+                  <h3>Recently Added Materials</h3>
+                  <a href="courses.html" class="view-all">View All</a>
+                </div>
+                <div class="materials-list" id="materialsList">
+                  <!-- Skeleton Loader (Shown during "loading") -->
+                  <div class="skeleton-item material-skeleton"></div>
+                  <div class="skeleton-item material-skeleton"></div>
+                  
+                  <!-- Empty State (Hidden by default) -->
+                  <div class="empty-state hidden" id="materialsEmpty">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <p>No materials added yet.</p>
+                  </div>
+
+                  <!-- Actual Content (Hidden during loading) -->
+                  <div class="list-content hidden">
+                    <!-- Material Card 1 -->
+                    <div class="material-card">
+                      <div class="material-icon pdf"><i class="fa-solid fa-file-pdf"></i></div>
+                      <div class="material-info">
+                        <h4>Data Structures Summary</h4>
+                        <p>PDF • Uploaded by <span>Aya Ahmed</span> • 2h ago</p>
+                      </div>
+                      <div class="material-actions">
+                        <button class="btn btn-icon-only"><i class="fa-solid fa-download"></i></button>
+                        <button class="btn btn-outline sm">View</button>
+                      </div>
+                    </div>
+                    <!-- Material Card 2 -->
+                    <div class="material-card">
+                      <div class="material-icon video"><i class="fa-solid fa-video"></i></div>
+                      <div class="material-info">
+                        <h4>Network Protocols Intro</h4>
+                        <p>Video • Uploaded by <span>Dr. Samy</span> • 5h ago</p>
+                      </div>
+                      <div class="material-actions">
+                        <button class="btn btn-icon-only"><i class="fa-solid fa-play"></i></button>
+                        <button class="btn btn-outline sm">View</button>
+                      </div>
+                    </div>
+                    <!-- Material Card 3 -->
+                    <div class="material-card">
+                      <div class="material-icon doc"><i class="fa-solid fa-file-lines"></i></div>
+                      <div class="material-info">
+                        <h4>Operating Systems Notes</h4>
+                        <p>Notes • Uploaded by <span>Omar Khaled</span> • Yesterday</p>
+                      </div>
+                      <div class="material-actions">
+                        <button class="btn btn-icon-only"><i class="fa-solid fa-download"></i></button>
+                        <button class="btn btn-outline sm">View</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Recommended Courses -->
+              <section class="section-block animate-in">
+                <div class="section-header">
+                  <h3>Recommended Courses</h3>
+                  <a href="courses.html" class="view-all">View All</a>
+                </div>
+                <div class="course-grid" id="courseGrid">
+                  <!-- Skeletons -->
+                  <div class="skeleton-item course-skeleton"></div>
+                  <div class="skeleton-item course-skeleton"></div>
+                  
+                  <!-- Empty State -->
+                  <div class="empty-state hidden" id="coursesEmpty">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <p>No recommended courses yet.</p>
+                  </div>
+
+                  <!-- Actual Content -->
+                  <div class="grid-content hidden">
+                    <!-- Course 1 -->
+                    <div class="course-card">
+                      <div class="course-thumb">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=400" alt="Course Thumbnail" />
+                        <span class="course-tag">Programming</span>
+                      </div>
+                      <div class="course-content">
+                        <div class="course-author">
+                          <img src="https://ui-avatars.com/api/?name=John+Smith" alt="Author" />
+                          <span>John Smith</span>
+                        </div>
+                        <h4>Advanced Java Patterns</h4>
+                        <div class="course-footer">
+                          <span class="course-price free">Free</span>
+                          <span class="course-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                          <button class="btn btn-primary sm">Enroll</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Course 2 -->
+                    <div class="course-card">
+                      <div class="course-thumb">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400" alt="Course Thumbnail" />
+                        <span class="course-tag">Electronics</span>
+                      </div>
+                      <div class="course-content">
+                        <div class="course-author">
+                          <img src="https://ui-avatars.com/api/?name=Eng+Sami" alt="Author" />
+                          <span>Eng. Sami</span>
+                        </div>
+                        <h4>Digital Circuit Design</h4>
+                        <div class="course-footer">
+                          <span class="course-price paid">$29.99</span>
+                          <span class="course-rating"><i class="fa-solid fa-star"></i> 4.7</span>
+                          <button class="btn btn-primary sm">Enroll</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- Right Column: Workshops & Contributors -->
+            <div class="grid-column">
+              <!-- Upcoming Workshops -->
+              <section class="section-block animate-in">
+                <div class="section-header">
+                  <h3>Upcoming Workshops</h3>
+                </div>
+                <div class="workshops-list" id="workshopsList">
+                  <!-- Skeletons -->
+                  <div class="skeleton-item workshop-skeleton"></div>
+                  
+                  <!-- Empty State -->
+                  <div class="empty-state hidden" id="workshopsEmpty">
+                    <i class="fa-solid fa-calendar-xmark"></i>
+                    <p>No upcoming workshops.</p>
+                  </div>
+
+                  <!-- Actual Content -->
+                  <div class="list-content hidden">
+                    <!-- Workshop 1 -->
+                    <div class="workshop-card">
+                      <div class="workshop-date">
+                        <span class="day">15</span>
+                        <span class="month">MAY</span>
+                      </div>
+                      <div class="workshop-info">
+                        <h4>UI/UX for Engineers</h4>
+                        <p><i class="fa-solid fa-clock"></i> 06:00 PM • Online</p>
+                        <button class="btn btn-outline btn-block sm">Register Now</button>
+                      </div>
+                    </div>
+                    <!-- Workshop 2 -->
+                    <div class="workshop-card">
+                      <div class="workshop-date">
+                        <span class="day">22</span>
+                        <span class="month">MAY</span>
+                      </div>
+                      <div class="workshop-info">
+                        <h4>Cloud Computing Workshop</h4>
+                        <p><i class="fa-solid fa-clock"></i> 02:00 PM • Offline</p>
+                        <button class="btn btn-outline btn-block sm">Register Now</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Top Contributors -->
+              <section class="section-block animate-in">
+                <div class="section-header">
+                  <h3>Top Contributors</h3>
+                </div>
+                <div class="contributors-list">
+                  <!-- Contributor 1 -->
+                  <div class="contributor-item">
+                    <div class="rank">1</div>
+                    <img src="https://ui-avatars.com/api/?name=Aya+A&background=f1822d&color=fff" alt="User" />
+                    <div class="contributor-info">
+                      <h5>Aya Ahmed</h5>
+                      <p>125 Contributions</p>
+                    </div>
+                    <div class="medal"><i class="fa-solid fa-medal gold"></i></div>
+                  </div>
+                  <!-- Contributor 2 -->
+                  <div class="contributor-item">
+                    <div class="rank">2</div>
+                    <img src="https://ui-avatars.com/api/?name=Omar+K&background=066f6c&color=fff" alt="User" />
+                    <div class="contributor-info">
+                      <h5>Omar Khaled</h5>
+                      <p>98 Contributions</p>
+                    </div>
+                    <div class="medal"><i class="fa-solid fa-medal silver"></i></div>
+                  </div>
+                  <!-- Contributor 3 -->
+                  <div class="contributor-item">
+                    <div class="rank">3</div>
+                    <img src="https://ui-avatars.com/api/?name=Sara+M&background=f1822d&color=fff" alt="User" />
+                    <div class="contributor-info">
+                      <h5>Sara Mohsen</h5>
+                      <p>84 Contributions</p>
+                    </div>
+                    <div class="medal"><i class="fa-solid fa-medal bronze"></i></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Footer -->
+        <footer class="dashboard-footer">
+          <div class="footer-links">
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </div>
+          <p>&copy; 2026 EngHub Dashboard. Engineering Excellence.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>
