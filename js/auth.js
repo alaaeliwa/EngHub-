@@ -47,8 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             setTimeout(() => {
-                alert('Reset link has been sent to your email!');
-                window.location.href = 'login.html';
+                showToast('Reset link sent! Check your inbox.', 'success');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
             }, 1200);
         });
     }

@@ -51,3 +51,45 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+
+/**
+ * Global Toast Notification System
+ * @param {string} message - The message to display
+ * @param {string} type - 'success' | 'error' | 'info'
+ */
+function showToast(message, type = 'info') {
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    const icons = {
+        success: 'fa-circle-check',
+        error: 'fa-circle-xmark',
+        info: 'fa-circle-info'
+    };
+
+    toast.innerHTML = `
+        <i class="fa-solid ${icons[type] || icons.info}"></i>
+        <span>${message}</span>
+    `;
+
+    container.appendChild(toast);
+
+    // Auto-remove after 4 seconds
+    setTimeout(() => {
+        toast.style.animation = 'toastOut 0.5s ease forwards';
+        setTimeout(() => {
+            toast.remove();
+            if (container.children.length === 0) container.remove();
+        }, 500);
+    }, 4000);
+}
+
+// Make it globally accessible
+window.showToast = showToast;

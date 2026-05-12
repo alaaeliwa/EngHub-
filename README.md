@@ -1,288 +1,102 @@
-# 🎓 EduHub - Engineering Learning Platform
+# 🎓 EngHub - Engineering Student Platform
 
-A modern, responsive landing page for **EduHub**, a centralized engineering learning platform where students can discover courses, workshops, and learning materials.
-
----
-
-## ✨ Features
-
-### 🔝 **Navbar**
-
-- Sticky navigation bar with smooth shadow effect on scroll
-- Logo with icon
-- Navigation links (Home, Courses, Workshops)
-- Login and Sign Up buttons with gradient styling
-- Responsive hamburger menu for mobile devices
-
-### 🏠 **Hero Section**
-
-- Eye-catching headline: "Your Engineering Learning Hub"
-- Compelling call-to-action description
-- Two primary action buttons (Browse Courses, Explore Workshops)
-- Animated illustration placeholder
-- Smooth fade-in animations
-
-### 💡 **About Section**
-
-- Clear explanation of the platform's purpose
-- Professional and student-friendly messaging
-- Light gray background for visual separation
-
-### ⚙️ **Features Section**
-
-- 6 feature cards with icons:
-  - Organized Content
-  - Community Contributions
-  - Peer Teaching
-  - Workshops & Events
-  - Smart Search
-  - Progress Tracking
-- Hover animations with elevation effects
-
-### 🚀 **How to Use Section**
-
-- 4-step visual guide with icons and descriptions
-- Step progression with arrow indicators
-- Clean card-based layout
-- Mobile-responsive design
-
-### 📚 **Explore Section**
-
-- Tab system for switching between Courses and Workshops
-- 6 course cards and 6 workshop cards
-- Each card includes:
-  - Icon-based header with gradient
-  - Title and description
-  - Call-to-action button
-
-### 📢 **Call-to-Action Section**
-
-- Prominent gradient background
-- Large heading and description
-- Primary action button
-
-### 🔚 **Footer**
-
-- Company logo and tagline
-- Quick links (Courses, Workshops, About, FAQ)
-- Social media icons (Facebook, Twitter, LinkedIn, Instagram)
-- Copyright information
+**EngHub** is a comprehensive, centralized learning platform designed specifically for engineering students. It bridges the gap between formal university curriculum and practical skills by providing organized course materials, workshops, and peer-to-peer learning opportunities.
 
 ---
 
-## 🎨 Design Specifications
+## 🚀 Key Modules & Features
 
-### **Color Scheme**
+### 1. 🏠 Core Dashboard
+- **Compact Sidebar**: Permanent navigation for seamless switching between modules.
+- **Top Navbar**: Integrated search and user profile management.
+- **Overview Stat Cards**: Quick glance at total materials, upcoming workshops, and registered events.
 
-- **Primary Blue**: `#2563eb`
-- **Secondary Blue**: `#1e40af`
-- **Accent Orange**: `#f97316`
-- **Light Gray**: `#f3f4f6`
-- **Text Dark**: `#1f2937`
-- **Text Light**: `#6b7280`
-- **White**: `#ffffff`
+### 2. 📚 Courses & Materials
+- **Academic Structure**: Materials organized by Year (1st - 4th) and Semester.
+- **Smart Filtering**: Real-time search by course name or code, and filtering by content type (PDF, Summary, Video).
+- **Course Details**:
+  - **Tabbed Interface**: Seamless switching between Summaries, PDFs, Videos, and Exam Banks.
+  - **Material Voting**: Upvote/Downvote system for quality control.
+  - **Interactive Discussions**: Integrated comment section for peer collaboration.
 
-### **Typography**
+### 3. 🧩 Workshops & Events
+- **Events Portal**: Discover upcoming educational sessions, bootcamps, and soft skills workshops.
+- **Featured Workshop**: High-impact banner for the most important upcoming event.
+- **Add Workshop Form**: A professional, card-based interface for students to organize their own workshops, featuring:
+  - Dynamic location toggling (Online vs. Physical Location).
+  - Seat management and instructor bio integration.
+  - Dynamic list management for topics and requirements.
+- **Workshop Details**: Deep-dive into session objectives, instructor profiles, and quick registration system.
 
-- Font Family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif
-- Headings: Font-weight 700-800
-- Body text: Font-weight 400-500
-
-### **Spacing & Layout**
-
-- Max container width: 1200px
-- Standard padding: 80px vertical, 20px horizontal
-- Gap between grid items: 30px
-
----
-
-## 📱 Responsive Design
-
-### **Breakpoints**
-
-- **Desktop**: Full layout with all features
-- **Tablet (768px)**: Navigation menu in hamburger
-- **Mobile (480px)**: Single column layouts, adjusted font sizes
-
-### **Mobile Features**
-
-- Hamburger menu for navigation
-- Touch-friendly button sizes
-- Optimized card layouts
-- Readable font sizes on small screens
+### 4. 🔐 Authentication & Access
+- **Modern Login/Register**: Clean, focused interface for user entry.
+- **Role Awareness**: Distinctions between Student and Organizer profiles.
 
 ---
 
-## 🚀 Getting Started
+## 🎨 Design System
 
-### **Installation**
+- **Aesthetics**: Modern "Soft-UI" with glassmorphism touches and subtle shadows.
+- **Color Palette**: 
+  - **Primary**: Deep Teal (`#066f6c`) - Representing focus and stability.
+  - **Secondary**: Vibrant Orange (`#f1822d`) - Representing energy and events.
+- **Typography**: `Inter` Google Font for maximum readability.
+- **Responsiveness**: Mobile-first architecture using CSS Grid and Flexbox.
 
-1. Clone or download the repository:
+---
 
-   ```bash
-   git clone https://github.com/your-repo/endhub.git
-   cd endhub
-   ```
+## 🛠️ Technology Stack
 
-2. Open the landing page in your browser:
+- **Frontend**: HTML5, Vanilla CSS3 (Custom properties/Variables), Vanilla JavaScript (ES6+).
+- **Icons**: Font Awesome 6.4.
+- **Animations**: CSS transitions and keyframe animations for a "live" feel.
 
-   ```bash
-   # Option 1: Direct file open
-   open index.html
+---
 
-   # Option 2: Using a local server (Python)
-   python -m http.server 8000
+## 📂 Project Structure
 
-   # Option 3: Using a local server (Node.js)
-   npx http-server
-   ```
-
-3. Visit `http://localhost:8000` (or your server port)
-
-### **File Structure**
-
-```
+```bash
 EngHub/
-├── index.html       # Main landing page HTML
-├── styles.css       # Complete styling and responsive design
-├── script.js        # Interactive functionality
-└── README.md        # Documentation
+├── pages/
+│   ├── dashboard.html        # Main Overview
+│   ├── courses.html          # Course Explorer
+│   ├── course-details.html   # Detailed Content View
+│   ├── workshops.html        # Events Portal
+│   ├── workshop-details.html # Session Deep-dive
+│   ├── create-workshop.html  # Workshop Creation Form
+│   ├── login.html            # Authentication
+│   └── register.html         # User Registration
+├── style/
+│   ├── global.css            # Design System & Variables
+│   ├── dashboard.css         # Shared Layout Styles
+│   ├── courses.css           # Materials Module UI
+│   ├── workshops.css         # Events Module UI
+│   └── ...                   # Page-specific styling
+├── js/
+│   ├── main.js               # Global UI Logic
+│   ├── courses.js            # Filtering & Search Logic
+│   └── create-workshop.js    # Form Logic & Toggles
+├── images/                   # Local assets & logos
+└── README.md                 # Project Documentation
 ```
 
 ---
 
-## 🎯 Interactive Features
+## 🏁 Future Roadmap
 
-### **JavaScript Functionality**
-
-- **Tab Switching**: Toggle between Courses and Workshops tabs
-- **Smooth Scrolling**: Navigate to sections with smooth animation
-- **Hamburger Menu**: Mobile navigation toggle
-- **Scroll Effects**: Navbar shadow enhancement on scroll
-- **Intersection Observer**: Card fade-in animations when scrolling into view
-- **Active Navigation**: Highlight current section in navbar
-- **Scroll-to-Top**: Button appears when scrolling down (bottom-right)
-- **Keyboard Accessibility**: ESC key closes menu, Enter activates buttons
-
-### **Animations**
-
-- Slide-in animations for hero content
-- Hover elevation effects on cards
-- Smooth transitions on all interactive elements
-- Gradient background animations
-- Fade-in effects for cards on scroll
+- [ ] **Backend Integration**: Connecting to Node.js/Express for real data persistence.
+- [ ] **Notification System**: Real-time alerts for new materials or upcoming workshops.
+- [ ] **PDF Previewer**: Direct in-browser viewing of summary documents.
+- [ ] **Peer Teaching**: Real-time scheduling for 1-on-1 student sessions.
 
 ---
 
-## 🔧 Customization
+## 🎓 About the Project
 
-### **Modify Colors**
+**EngHub** is developed as part of a Software Engineering graduation project. Its mission is to make engineering education more accessible, collaborative, and organized for the next generation of engineers.
 
-Edit the CSS variables in `styles.css`:
-
-```css
-:root {
-  --primary-color: #2563eb;
-  --secondary-color: #1e40af;
-  --accent-color: #f97316;
-  /* ... more colors ... */
-}
-```
-
-### **Add New Sections**
-
-1. Add HTML in `index.html`
-2. Create CSS styles in `styles.css`
-3. Add JavaScript functionality in `script.js` if needed
-
-### **Update Content**
-
-- Replace text and images in HTML
-- Modify course/workshop cards
-- Update footer links and social media
-- Change navbar branding
+**Tagline**: _Empowering Engineers, One Resource at a Time._
 
 ---
 
-## 📊 Browser Support
-
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-- ⚠️ IE 11 (limited support)
-
----
-
-## 🎬 Demo Interactions
-
-### **Try These**
-
-1. Click "Browse Courses" → Smooth scroll to explore section
-2. Hover over feature cards → Elevation effect
-3. Click tab buttons → Switch between Courses/Workshops
-4. Scroll down → Scroll-to-top button appears
-5. Resize browser → Watch responsive design adapt
-6. Mobile view → Hamburger menu appears
-
----
-
-## 🚀 Performance
-
-- **Lazy Loading**: Images load on scroll (can be implemented)
-- **Optimized CSS**: Single stylesheet with all styles
-- **Minimal JavaScript**: Lightweight, efficient code
-- **Fast Load Time**: ~100KB total assets
-- **Optimized Images**: SVG icons used via Font Awesome
-
----
-
-## 📝 Future Enhancements
-
-- [ ] Add form validation for sign-up/login
-- [ ] Implement dark mode toggle
-- [ ] Add search functionality
-- [ ] Integrate with backend API
-- [ ] Add user authentication
-- [ ] Implement course filtering
-- [ ] Add rating/review system
-- [ ] Create user dashboard
-- [ ] Add notification system
-- [ ] Multilingual support
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-## 📧 Contact & Support
-
-For questions or feedback, please contact:
-
-- **Email**: support@endhub.com
-- **Twitter**: [@EduHub](https://twitter.com)
-- **LinkedIn**: [EduHub](https://linkedin.com)
-
----
-
-## 🎓 About EduHub
-
-**EduHub** is dedicated to making engineering education accessible, collaborative, and engaging. Our mission is to connect learners with quality resources, mentors, and peers to help them succeed in their engineering studies.
-
-**Tagline**: _Learn. Share. Build the Future._
-
----
-
-_Last Updated: May 1, 2024_
+_Last Updated: May 12, 2026_
