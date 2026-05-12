@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/dashboard.css" />
+    <link rel="stylesheet" href="../style/search.css" />
+
+    <title>Global Search | EngHub</title>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <img src="../images/logo.png" alt="EngHub logo" />
+          </a>
+          <button id="sidebarClose" class="mobile-only btn-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="courses.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Courses & Materials</a>
+            <a href="workshops.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Workshops & Events</a>
+            <a href="search.html" class="nav-item active"><i class="fa-solid fa-magnifying-glass"></i> Search Functionality</a>
+            <a href="#" class="nav-item upload-nav"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Materials</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-person-chalkboard"></i> Peer Teaching</a>
+          </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+          <a href="login.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+          <div class="top-nav-left">
+            <button id="sidebarToggle" class="mobile-only btn-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="breadcrumb">
+               <span>Search</span>
+            </div>
+          </div>
+          
+          <div class="top-nav-right">
+            <button class="btn-icon notification-btn">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notification-badge"></span>
+            </button>
+            <div class="user-profile">
+              <div class="user-info">
+                <span class="user-name">Alaa Eliwa</span>
+                <span class="user-role">Student</span>
+              </div>
+              <div class="user-avatar">
+                <img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff" alt="User Avatar" />
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="content-body">
+          <!-- Search Hero -->
+          <section class="search-hero-section animate-in">
+             <h1>Global Search</h1>
+             <p>Find courses, workshops, and study materials across the entire platform.</p>
+             <div class="main-search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="globalSearchInput" placeholder="Search by name, code, or keyword (e.g. React, Java, CS234)..." autofocus>
+                <button class="btn btn-primary">Search</button>
+             </div>
+          </section>
+
+          <!-- Filters & Results Layout -->
+          <div class="search-layout-grid">
+            <!-- Sidebar Filters -->
+            <aside class="search-filters-sidebar animate-in">
+              <div class="filter-group">
+                <h4>Content Type</h4>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" checked> Courses</label>
+                  <label><input type="checkbox" checked> Workshops</label>
+                  <label><input type="checkbox"> Study Materials</label>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h4>Category</h4>
+                <div class="checkbox-group">
+                  <label><input type="checkbox"> Programming</label>
+                  <label><input type="checkbox"> Design</label>
+                  <label><input type="checkbox"> Engineering Tools</label>
+                  <label><input type="checkbox"> Soft Skills</label>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h4>Level</h4>
+                <div class="checkbox-group">
+                  <label><input type="checkbox"> Beginner</label>
+                  <label><input type="checkbox"> Intermediate</label>
+                  <label><input type="checkbox"> Advanced</label>
+                </div>
+              </div>
+
+              <button class="btn btn-outline sm full-width">Reset Filters</button>
+            </aside>
+
+            <!-- Results Section -->
+            <div class="search-results-area">
+              <div class="results-header">
+                <span class="results-count">Showing 3 results for "React"</span>
+                <div class="sort-dropdown">
+                   <label>Sort by:</label>
+                   <select>
+                     <option>Relevance</option>
+                     <option>Newest</option>
+                     <option>Most Viewed</option>
+                   </select>
+                </div>
+              </div>
+
+              <!-- Results Grid -->
+              <div class="results-grid animate-in" id="searchResultsGrid">
+                <!-- Result Card 1: Workshop -->
+                <div class="result-card workshop">
+                   <div class="card-type-tag">Workshop</div>
+                   <div class="card-image">
+                     <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=300" alt="Result">
+                   </div>
+                   <div class="card-info">
+                     <span class="cat">Programming</span>
+                     <h3>Introduction to React</h3>
+                     <p>Learn the basics of React.js components and state management.</p>
+                     <div class="meta">
+                       <span><i class="fa-solid fa-calendar"></i> May 25, 2026</span>
+                       <span><i class="fa-solid fa-user"></i> Ahmad Ali</span>
+                     </div>
+                     <a href="workshop-details.html" class="btn btn-outline sm">View Details</a>
+                   </div>
+                </div>
+
+                <!-- Result Card 2: Course -->
+                <div class="result-card course">
+                   <div class="card-type-tag">Course</div>
+                   <div class="card-image">
+                     <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80&w=300" alt="Result">
+                   </div>
+                   <div class="card-info">
+                     <span class="cat">Web Development</span>
+                     <h3>Advanced Frontend Engineering</h3>
+                     <p>A comprehensive course on modern frontend frameworks and performance.</p>
+                     <div class="meta">
+                       <span><i class="fa-solid fa-code"></i> CS402</span>
+                       <span><i class="fa-solid fa-star"></i> 4.8 Rating</span>
+                     </div>
+                     <a href="course-details.html" class="btn btn-outline sm">View Course</a>
+                   </div>
+                </div>
+
+                <!-- Result Card 3: Material -->
+                <div class="result-card material">
+                   <div class="card-type-tag">Material</div>
+                   <div class="card-image">
+                     <div class="placeholder-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                   </div>
+                   <div class="card-info">
+                     <span class="cat">Summary</span>
+                     <h3>React Hooks Cheat Sheet</h3>
+                     <p>A quick reference guide for useEffect, useState, and custom hooks.</p>
+                     <div class="meta">
+                       <span><i class="fa-solid fa-download"></i> 1.2k Downloads</span>
+                       <span><i class="fa-solid fa-file"></i> PDF (2MB)</span>
+                     </div>
+                     <a href="#" class="btn btn-outline sm">Download PDF</a>
+                   </div>
+                </div>
+              </div>
+
+              <!-- Empty State (Hidden by default) -->
+              <div class="no-results" id="noResults" style="display: none;">
+                 <img src="https://cdn-icons-png.flaticon.com/512/6134/6134065.png" alt="No results">
+                 <h3>No results found</h3>
+                 <p>Try adjusting your search or filters to find what you're looking for.</p>
+                 <button class="btn btn-primary" onclick="location.reload()">Clear All</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="dashboard-footer">
+          <p>&copy; 2026 EngHub Dashboard. Engineering Excellence.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/search.js"></script>
+  </body>
+</html>
