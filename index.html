@@ -12,35 +12,38 @@
     />
 
     <!-- style -->
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/global.css" />
+    <link rel="stylesheet" href="style/style.css" />
 
     <title>EngHub</title>
   </head>
   <body>
     <nav class="nav">
-      <div class="container">
-        <div class="nav-content">
-          <a href="index.html" class="nav-logo"
-            ><img src="images/logo.png" alt="EngHub logo"
-          /></a>
+      <div class="container nav-wrapper">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.png" alt="EngHub logo" />
+        </a>
+
+        <div class="nav-menu" id="navMenu">
           <ul class="nav-links">
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="#Features" class="nav-link">Features</a></li>
-            <li>
-              <a href="#How-it-works" class="nav-link">How it works</a>
-            </li>
+            <li><a href="#How-it-works" class="nav-link">How it works</a></li>
             <li><a href="#About" class="nav-link">About</a></li>
           </ul>
+          <div class="nav-buttons">
+            <a href="pages/login.html" class="btn btn-outline">Login</a>
+            <a href="pages/register.html" class="btn btn-primary">Get Started</a>
+          </div>
         </div>
-        <div class="nav-buttons">
-          <a href="login.html" class="btn btn-outline">Login</a>
-          <a href="register.html" class="btn btn-primary">Get Started</a>
-        </div>
-      </div>
-    </nav>
 
-    <header class="hero">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>    <header class="hero">
       <div class="container">
         <div class="hero-wrapper">
           <div class="hero-text">
@@ -225,7 +228,7 @@
 
             <div class="about-actions">
               <a href="#Features" class="btn btn-primary">Learn More</a>
-              <a href="register.html" class="btn btn-outline">Join Community</a>
+              <a href="pages/register.html" class="btn btn-outline">Join Community</a>
             </div>
           </div>
 
@@ -246,7 +249,7 @@
             <h2 class="cta-title">Ready to Boost Your <span class="text-secondary">Engineering</span> Journey?</h2>
             <p class="cta-subtitle">Join thousands of students and access organized academic resources today. Start your path to success with EngHub.</p>
             <div class="cta-actions">
-              <a href="register.html" class="btn btn-secondary btn-lg">Get Started Now <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="pages/register.html" class="btn btn-secondary btn-lg">Get Started Now <i class="fa-solid fa-arrow-right"></i></a>
               <a href="#Features" class="btn btn-outline-white">Explore Features</a>
             </div>
           </div>
@@ -310,6 +313,7 @@
       </div>
     </footer>
 
+    <script src="js/main.js"></script>
   </body>
 
 
