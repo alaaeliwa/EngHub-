@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/dashboard.css" />
+    <link rel="stylesheet" href="../style/course-details.css" />
+
+    <title>Course Details | EngHub</title>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar (Shared) -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <img src="../images/logo.png" alt="EngHub logo" />
+          </a>
+          <button id="sidebarClose" class="mobile-only btn-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="courses.html" class="nav-item active"><i class="fa-solid fa-book-open"></i> Courses & Materials</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Workshops & Events</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Search Functionality</a>
+            <a href="#" class="nav-item upload-nav"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Materials</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-person-chalkboard"></i> Peer Teaching</a>
+          </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+          <a href="login.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+          <div class="top-nav-left">
+            <button id="sidebarToggle" class="mobile-only btn-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="breadcrumb">
+               <a href="courses.html">Courses</a> <i class="fa-solid fa-chevron-right"></i> <span>Data Structures</span>
+            </div>
+          </div>
+          
+          <div class="top-nav-right">
+            <button class="btn-icon notification-btn">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notification-badge"></span>
+            </button>
+            <div class="user-profile">
+              <div class="user-info">
+                <span class="user-name">Alaa Eliwa</span>
+                <span class="user-role">Software Engineering</span>
+              </div>
+              <div class="user-avatar">
+                <img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff" alt="User Avatar" />
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="content-body">
+          <!-- Course Header Section -->
+          <section class="course-header-section animate-in">
+            <div class="header-main">
+              <div class="header-text">
+                <div class="course-badge">Second Year • Semester 1</div>
+                <h1>Data Structures</h1>
+                <span class="course-code-pill">CS234</span>
+                <p class="course-desc">Learn data organization, linked lists, trees, graphs, and algorithms for efficient data management.</p>
+              </div>
+              <div class="header-actions">
+                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Upload Material</button>
+                <button class="btn btn-outline"><i class="fa-solid fa-share-nodes"></i> Share Course</button>
+              </div>
+            </div>
+            
+            <!-- Quick Stats Row -->
+            <div class="course-stats-row">
+              <div class="stat-box">
+                <i class="fa-solid fa-file-pdf"></i>
+                <div class="stat-info">
+                  <span class="val">12</span>
+                  <span class="lbl">PDFs</span>
+                </div>
+              </div>
+              <div class="stat-box">
+                <i class="fa-solid fa-video"></i>
+                <div class="stat-info">
+                  <span class="val">8</span>
+                  <span class="lbl">Videos</span>
+                </div>
+              </div>
+              <div class="stat-box">
+                <i class="fa-solid fa-star"></i>
+                <div class="stat-info">
+                  <span class="val">4.8</span>
+                  <span class="lbl">Rating</span>
+                </div>
+              </div>
+              <div class="stat-box">
+                <i class="fa-solid fa-users"></i>
+                <div class="stat-info">
+                  <span class="val">120</span>
+                  <span class="lbl">Students</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Content Tabs & Lists -->
+          <section class="content-tabs-section animate-in">
+            <div class="tabs-nav">
+              <button class="tab-btn active" data-tab="summaries">Summaries</button>
+              <button class="tab-btn" data-tab="pdfs">PDFs</button>
+              <button class="tab-btn" data-tab="videos">Videos</button>
+              <button class="tab-btn" data-tab="exams">Exam Banks</button>
+              <button class="tab-btn" data-tab="external">Resources</button>
+              <button class="tab-btn" data-tab="comments">Discussion</button>
+            </div>
+
+            <div class="tab-content" id="tabContent">
+              <!-- Materials List (Default: Summaries) -->
+              <div class="materials-tab-view active" id="summaries-view">
+                <div class="tab-header">
+                  <h3>Course Summaries</h3>
+                  <div class="tab-actions">
+                    <input type="text" placeholder="Search summaries..." class="tab-search">
+                  </div>
+                </div>
+
+                <div class="materials-table">
+                  <div class="table-row header">
+                    <div class="col-info">File Name</div>
+                    <div class="col-meta">Uploaded By</div>
+                    <div class="col-date">Date</div>
+                    <div class="col-actions">Actions</div>
+                  </div>
+                  
+                  <!-- Material Item 1 -->
+                  <div class="table-row material-item">
+                    <div class="col-info">
+                      <div class="file-icon pdf"><i class="fa-solid fa-file-pdf"></i></div>
+                      <div class="file-details">
+                        <span class="file-name">Chapter 1: Intro to Linked Lists</span>
+                        <span class="file-size">1.2 MB • PDF</span>
+                      </div>
+                    </div>
+                    <div class="col-meta">
+                      <div class="uploader">
+                        <img src="https://ui-avatars.com/api/?name=Aya+Ahmed&background=random" alt="Aya">
+                        <span>Aya Ahmed</span>
+                      </div>
+                    </div>
+                    <div class="col-date">May 10, 2026</div>
+                    <div class="col-actions">
+                      <button class="btn-icon-only"><i class="fa-solid fa-eye"></i></button>
+                      <button class="btn-icon-only"><i class="fa-solid fa-download"></i></button>
+                      <button class="btn-icon-only"><i class="fa-solid fa-heart"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- Material Item 2 -->
+                  <div class="table-row material-item">
+                    <div class="col-info">
+                      <div class="file-icon pdf"><i class="fa-solid fa-file-pdf"></i></div>
+                      <div class="file-details">
+                        <span class="file-name">Complete Midterm Summary</span>
+                        <span class="file-size">4.5 MB • PDF</span>
+                      </div>
+                    </div>
+                    <div class="col-meta">
+                      <div class="uploader">
+                        <img src="https://ui-avatars.com/api/?name=Omar+Khalid&background=random" alt="Omar">
+                        <span>Omar Khalid</span>
+                      </div>
+                    </div>
+                    <div class="col-date">May 05, 2026</div>
+                    <div class="col-actions">
+                      <button class="btn-icon-only"><i class="fa-solid fa-eye"></i></button>
+                      <button class="btn-icon-only"><i class="fa-solid fa-download"></i></button>
+                      <button class="btn-icon-only"><i class="fa-solid fa-heart"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Other tabs will be handled via JS/CSS -->
+            </div>
+          </section>
+
+          <!-- Rating & Discussion Section -->
+          <section class="discussion-section animate-in">
+             <div class="section-grid">
+               <!-- Left: Rating Card -->
+               <div class="rating-card">
+                  <h3>Course Rating</h3>
+                  <div class="rating-overall">
+                    <span class="score">4.8</span>
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <span class="count">Based on 45 reviews</span>
+                  </div>
+                  <div class="rating-actions">
+                    <p>How would you rate this course?</p>
+                    <div class="vote-buttons">
+                      <button class="btn-vote like"><i class="fa-solid fa-thumbs-up"></i> Helpful</button>
+                      <button class="btn-vote dislike"><i class="fa-solid fa-thumbs-down"></i> Not Helpful</button>
+                    </div>
+                  </div>
+               </div>
+
+               <!-- Right: Comments List -->
+               <div class="comments-container">
+                  <div class="comments-header">
+                    <h3>Discussion (12)</h3>
+                  </div>
+                  <div class="comment-input-box">
+                    <img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff" alt="Alaa">
+                    <div class="input-wrapper">
+                      <textarea placeholder="Ask a question or share a thought..."></textarea>
+                      <button class="btn btn-primary sm">Post Comment</button>
+                    </div>
+                  </div>
+                  <div class="comments-list">
+                    <div class="comment-item">
+                      <img src="https://ui-avatars.com/api/?name=Sara+Ali&background=random" alt="Sara">
+                      <div class="comment-content">
+                        <div class="comment-top">
+                          <span class="author">Sara Ali</span>
+                          <span class="time">2 hours ago</span>
+                        </div>
+                        <p>Does anyone have the answers for Chapter 3 exercises?</p>
+                        <div class="comment-actions">
+                          <button><i class="fa-solid fa-reply"></i> Reply</button>
+                          <button><i class="fa-solid fa-heart"></i> 4 Likes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+             </div>
+          </section>
+        </div>
+
+        <footer class="dashboard-footer">
+          <p>&copy; 2026 EngHub Dashboard. Engineering Excellence.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/course-details.js"></script>
+  </body>
+</html>

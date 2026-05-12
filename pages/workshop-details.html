@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/dashboard.css" />
+    <link rel="stylesheet" href="../style/workshop-details.css" />
+
+    <title>Workshop Details | EngHub</title>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <img src="../images/logo.png" alt="EngHub logo" />
+          </a>
+          <button id="sidebarClose" class="mobile-only btn-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="courses.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Courses & Materials</a>
+            <a href="workshops.html" class="nav-item active"><i class="fa-solid fa-calendar-days"></i> Workshops & Events</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Search Functionality</a>
+            <a href="#" class="nav-item upload-nav"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Materials</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-person-chalkboard"></i> Peer Teaching</a>
+          </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+          <a href="login.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+          <div class="top-nav-left">
+            <button id="sidebarToggle" class="mobile-only btn-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="breadcrumb">
+               <a href="workshops.html">Workshops</a> <i class="fa-solid fa-chevron-right"></i> <span>Workshop Details</span>
+            </div>
+          </div>
+          
+          <div class="top-nav-right">
+            <button class="btn-icon notification-btn">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notification-badge"></span>
+            </button>
+            <div class="user-profile">
+              <div class="user-info">
+                <span class="user-name">Alaa Eliwa</span>
+                <span class="user-role">Software Engineering</span>
+              </div>
+              <div class="user-avatar">
+                <img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff" alt="User Avatar" />
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="content-body">
+          <!-- Workshop Hero Section -->
+          <section class="workshop-hero animate-in">
+            <div class="workshop-banner">
+              <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=1200" alt="Workshop Banner">
+              <div class="banner-overlay">
+                <span class="status-badge upcoming">Upcoming</span>
+              </div>
+            </div>
+            
+            <div class="workshop-header-info">
+              <div class="title-area">
+                <span class="category-tag">Programming Workshop</span>
+                <h1>Introduction to React</h1>
+                <div class="header-meta">
+                  <span><i class="fa-solid fa-video"></i> Online Session</span>
+                  <span><i class="fa-solid fa-star"></i> 4.9 (45 Reviews)</span>
+                </div>
+              </div>
+              <div class="action-area">
+                 <button class="btn btn-primary btn-lg register-btn">Register Now</button>
+                 <span class="seats-warning"><i class="fa-solid fa-users"></i> Only 20 seats left!</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Main Details Layout -->
+          <div class="details-grid">
+            <!-- Left Side: Content -->
+            <div class="details-main-content">
+              <!-- Info Cards Row -->
+              <section class="info-cards-row animate-in">
+                <div class="info-mini-card">
+                  <i class="fa-solid fa-calendar-day"></i>
+                  <div class="txt">
+                    <span class="label">Date</span>
+                    <span class="val">May 20, 2026</span>
+                  </div>
+                </div>
+                <div class="info-mini-card">
+                  <i class="fa-solid fa-clock"></i>
+                  <div class="txt">
+                    <span class="label">Time</span>
+                    <span class="val">6:00 PM</span>
+                  </div>
+                </div>
+                <div class="info-mini-card">
+                  <i class="fa-solid fa-hourglass-half"></i>
+                  <div class="txt">
+                    <span class="label">Duration</span>
+                    <span class="val">2 Hours</span>
+                  </div>
+                </div>
+                <div class="info-mini-card">
+                  <i class="fa-solid fa-user-tie"></i>
+                  <div class="txt">
+                    <span class="label">Instructor</span>
+                    <span class="val">Ahmad Ali</span>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Description -->
+              <section class="details-block animate-in">
+                <h3>Workshop Description</h3>
+                <p>Learn the fundamentals of React, the world's most popular JavaScript library for building user interfaces. This workshop is designed for students who want to transition from traditional HTML/JS to modern component-based frontend development.</p>
+                <p>We will build a real-world project together, focusing on best practices and modern React patterns (Hooks, Functional Components, and State Management).</p>
+              </section>
+
+              <!-- Topics Covered -->
+              <section class="details-block animate-in">
+                <h3>What you will learn</h3>
+                <div class="topics-grid">
+                  <div class="topic-item"><i class="fa-solid fa-circle-check"></i> React Basics & JSX</div>
+                  <div class="topic-item"><i class="fa-solid fa-circle-check"></i> Components & Props</div>
+                  <div class="topic-item"><i class="fa-solid fa-circle-check"></i> State & UseState Hook</div>
+                  <div class="topic-item"><i class="fa-solid fa-circle-check"></i> Handling Events</div>
+                  <div class="topic-item"><i class="fa-solid fa-circle-check"></i> Project Structure</div>
+                  <div class="topic-item"><i class="fa-solid fa-circle-check"></i> Modern UI Patterns</div>
+                </div>
+              </section>
+
+              <!-- Requirements -->
+              <section class="details-block animate-in">
+                <h3>Requirements</h3>
+                <ul class="requirements-list">
+                  <li>Basic knowledge of HTML & CSS</li>
+                  <li>Familiarity with JavaScript fundamentals (ES6+)</li>
+                  <li>Laptop with Node.js installed</li>
+                </ul>
+              </section>
+            </div>
+
+            <!-- Right Side: Sidebar Info -->
+            <div class="details-sidebar-content">
+              <!-- Instructor Card -->
+              <div class="instructor-card-detail animate-in">
+                <h3>About Instructor</h3>
+                <div class="instructor-profile">
+                  <img src="https://ui-avatars.com/api/?name=Ahmad+Ali&background=066f6c&color=fff" alt="Ahmad Ali">
+                  <div class="info">
+                    <h4>Ahmad Ali</h4>
+                    <span>Senior Frontend Developer</span>
+                  </div>
+                </div>
+                <p>Ahmad is a passionate developer with over 5 years of experience in React and modern web technologies. He has trained over 500 students in various web development bootcamps.</p>
+                <div class="social-links">
+                  <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="#"><i class="fa-solid fa-globe"></i></a>
+                </div>
+              </div>
+
+              <!-- Related Workshops -->
+              <div class="related-workshops animate-in">
+                <h3>Related Workshops</h3>
+                <div class="related-list">
+                  <a href="#" class="related-item">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=100" alt="Related">
+                    <div class="txt">
+                      <span>Advanced React Patterns</span>
+                      <small>May 28, 2026</small>
+                    </div>
+                  </a>
+                  <a href="#" class="related-item">
+                    <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&q=80&w=100" alt="Related">
+                    <div class="txt">
+                      <span>JavaScript ES6+ Deep Dive</span>
+                      <small>June 02, 2026</small>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="dashboard-footer">
+          <p>&copy; 2026 EngHub Dashboard. Engineering Excellence.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script>
+      document.querySelector('.register-btn').addEventListener('click', function() {
+        this.innerHTML = '<i class="fa-solid fa-check"></i> Registered ✅';
+        this.classList.replace('btn-primary', 'btn-success');
+        this.style.backgroundColor = '#059669';
+        this.disabled = true;
+        document.querySelector('.seats-warning').style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
