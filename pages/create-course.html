@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/dashboard.css" />
+    <link rel="stylesheet" href="../style/create-course.css" />
+
+    <title>Create Course | EngHub</title>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <img src="../images/logo.png" alt="EngHub logo" />
+          </a>
+          <button id="sidebarClose" class="mobile-only btn-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="courses.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Courses & Materials</a>
+            <a href="workshops.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Workshops & Events</a>
+            <a href="search.html" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Search Functionality</a>
+            <a href="upload-materials.html" class="nav-item upload-nav"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Materials</a>
+            <a href="peer-teaching.html" class="nav-item active"><i class="fa-solid fa-person-chalkboard"></i> Peer Teaching</a>
+          </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+          <a href="login.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+          <div class="top-nav-left">
+            <button id="sidebarToggle" class="mobile-only btn-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="breadcrumb">
+               <a href="peer-teaching.html">Peer Teaching</a>
+               <i class="fa-solid fa-chevron-right"></i>
+               <span>Create Course</span>
+            </div>
+          </div>
+          <div class="top-nav-right">
+             <div class="user-profile">
+               <div class="user-info">
+                 <span class="user-name">Alaa Eliwa</span>
+                 <span class="user-role">Student Instructor</span>
+               </div>
+               <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff" alt="User"></div>
+             </div>
+          </div>
+        </header>
+
+        <div class="content-body">
+          <section class="create-course-container">
+            <!-- Steps Progress -->
+            <div class="steps-progress-wrapper animate-in">
+              <div class="step active" data-step="1">
+                <div class="step-num">1</div>
+                <span>Basic Info</span>
+              </div>
+              <div class="step-line"></div>
+              <div class="step" data-step="2">
+                <div class="step-num">2</div>
+                <span>Course Content</span>
+              </div>
+              <div class="step-line"></div>
+              <div class="step" data-step="3">
+                <div class="step-num">3</div>
+                <span>Pricing & Publish</span>
+              </div>
+            </div>
+
+            <form id="createCourseForm" class="wizard-form">
+              <!-- Step 1: Basic Info -->
+              <div class="form-step active" id="step1">
+                <div class="step-header">
+                  <h2>Basic Course Details</h2>
+                  <p>Start by providing the fundamental information about your course.</p>
+                </div>
+                <div class="form-card">
+                  <div class="input-group full-width">
+                    <label>Course Title <span class="required">*</span></label>
+                    <input type="text" placeholder="e.g. Mastering AutoCAD for Beginners" required>
+                  </div>
+                  <div class="grid-2">
+                    <div class="input-group">
+                      <label>Category <span class="required">*</span></label>
+                      <select required>
+                        <option value="">Select Category</option>
+                        <option value="prog">Programming</option>
+                        <option value="math">Mathematics</option>
+                        <option value="eng">Engineering</option>
+                        <option value="soft">Soft Skills</option>
+                      </select>
+                    </div>
+                    <div class="input-group">
+                      <label>Difficulty Level <span class="required">*</span></label>
+                      <select required>
+                        <option value="beginner">Beginner</option>
+                        <option value="inter">Intermediate</option>
+                        <option value="adv">Advanced</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="input-group full-width">
+                    <label>Course Description <span class="required">*</span></label>
+                    <textarea rows="4" placeholder="What will students achieve after finishing this course?" required></textarea>
+                  </div>
+                  <div class="input-group full-width">
+                    <label>Cover Image</label>
+                    <div class="image-upload-box" id="coverUpload">
+                       <i class="fa-solid fa-image"></i>
+                       <p>Click to upload course cover (16:9 recommended)</p>
+                       <input type="file" hidden>
+                    </div>
+                  </div>
+                </div>
+                <div class="step-actions">
+                  <div></div>
+                  <button type="button" class="btn btn-primary next-step">Continue to Content <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- Step 2: Content -->
+              <div class="form-step" id="step2">
+                <div class="step-header">
+                  <h2>Curriculum & Lessons</h2>
+                  <p>Organize your course into lessons. You can add videos, notes, or links.</p>
+                </div>
+                
+                <div id="lessonsContainer">
+                  <!-- Lesson 1 -->
+                  <div class="form-card lesson-card animate-in">
+                    <div class="lesson-header">
+                      <h3>Lesson 1: Introduction</h3>
+                      <button type="button" class="btn-icon remove-lesson"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                    <div class="card-body">
+                      <div class="input-group full-width">
+                        <label>Lesson Title</label>
+                        <input type="text" placeholder="e.g. Getting Started with the Basics">
+                      </div>
+                      <div class="content-sources grid-2">
+                        <div class="source-item">
+                           <label><i class="fa-solid fa-video"></i> Video Content</label>
+                           <div class="file-mini-upload">
+                             <span>Select Video</span>
+                             <input type="file">
+                           </div>
+                        </div>
+                        <div class="source-item">
+                           <label><i class="fa-solid fa-file-pdf"></i> Lesson Notes</label>
+                           <div class="file-mini-upload">
+                             <span>Upload PDF</span>
+                             <input type="file">
+                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-outline full-width" id="addLessonBtn">
+                   <i class="fa-solid fa-plus"></i> Add Another Lesson
+                </button>
+
+                <div class="step-actions">
+                  <button type="button" class="btn btn-outline prev-step"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                  <button type="button" class="btn btn-primary next-step">Pricing & Review <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- Step 3: Pricing -->
+              <div class="form-step" id="step3">
+                <div class="step-header">
+                  <h2>Pricing & Finalize</h2>
+                  <p>Decide how you want to share your knowledge.</p>
+                </div>
+                <div class="form-card">
+                  <div class="input-group">
+                    <label>Is this a paid course?</label>
+                    <div class="pricing-selector">
+                       <label class="price-option">
+                         <input type="radio" name="coursePrice" value="free" checked>
+                         <div class="option-content">
+                           <i class="fa-solid fa-gift"></i>
+                           <span>Free Course</span>
+                           <small>Available to all students</small>
+                         </div>
+                       </label>
+                       <label class="price-option">
+                         <input type="radio" name="coursePrice" value="paid">
+                         <div class="option-content">
+                           <i class="fa-solid fa-tag"></i>
+                           <span>Paid Course</span>
+                           <small>Earn from your expertise</small>
+                         </div>
+                       </label>
+                    </div>
+                  </div>
+                  
+                  <div id="priceAmountSection" style="display: none; margin-top: 2rem;">
+                    <div class="input-group">
+                      <label>Course Price ($)</label>
+                      <input type="number" min="1" placeholder="e.g. 15.00">
+                      <p class="input-hint">EngHub takes 0% commission from peer teaching!</p>
+                    </div>
+                  </div>
+
+                  <div class="review-notice">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>By clicking publish, your course will be reviewed by the EngHub moderators to ensure content quality and academic integrity.</p>
+                  </div>
+                </div>
+
+                <div class="step-actions">
+                  <button type="button" class="btn btn-outline prev-step"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-paper-plane"></i> Publish Course
+                  </button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <footer class="dashboard-footer">
+          <p>&copy; 2026 EngHub Dashboard. Community Led Learning.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/create-course.js"></script>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/dashboard.css" />
+    <link rel="stylesheet" href="../style/profile.css" />
+
+    <title>User Profile | EngHub</title>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <img src="../images/logo.png" alt="EngHub logo" />
+          </a>
+          <button id="sidebarClose" class="mobile-only btn-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="courses.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Courses & Materials</a>
+            <a href="workshops.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Workshops & Events</a>
+            <a href="search.html" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Search Functionality</a>
+            <a href="upload-materials.html" class="nav-item upload-nav"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Materials</a>
+            <a href="peer-teaching.html" class="nav-item"><i class="fa-solid fa-person-chalkboard"></i> Peer Teaching</a>
+          </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+          <a href="login.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+          <div class="top-nav-left">
+            <button id="sidebarToggle" class="mobile-only btn-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="breadcrumb">
+               <span>My Profile</span>
+            </div>
+          </div>
+          <div class="top-nav-right">
+             <div class="notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge">3</span>
+             </div>
+             <a href="profile.html" class="user-profile active">
+               <div class="user-info">
+                 <span class="user-name">Alaa Eliwa</span>
+                 <span class="user-role">Premium Member</span>
+               </div>
+               <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff" alt="User"></div>
+             </a>
+          </div>
+        </header>
+
+        <div class="content-body">
+          <!-- Profile Header -->
+          <div class="profile-header-container animate-in">
+             <div class="profile-cover">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2070" alt="Cover" id="userCoverImg">
+                <input type="file" id="coverInput" hidden accept="image/*">
+                <button class="edit-cover" id="changeCoverBtn"><i class="fa-solid fa-camera"></i> Edit Cover</button>
+             </div>
+             <div class="profile-info-bar">
+                <div class="profile-avatar-wrapper">
+                   <img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff&size=150" alt="Avatar" id="userAvatarImg">
+                   <input type="file" id="avatarInput" hidden accept="image/*">
+                   <button class="edit-avatar" id="changeAvatarBtn"><i class="fa-solid fa-pen"></i></button>
+                </div>
+                <div class="profile-main-meta">
+                   <h1 id="userNameDisplay">Alaa Eliwa <i class="fa-solid fa-circle-check verified"></i></h1>
+                   <p id="userRoleDisplay">Software Engineering Student | Knowledge Sharer</p>
+                </div>
+                <div class="profile-actions">
+                   <button class="btn btn-primary" id="editProfileBtn"><i class="fa-solid fa-user-pen"></i> Edit Profile</button>
+                   <button class="btn btn-primary" id="saveProfileBtn" style="display: none;"><i class="fa-solid fa-check"></i> Save Changes</button>
+                </div>
+             </div>
+          </div>
+
+          <div class="profile-content-grid">
+             <!-- Sidebar Info -->
+             <aside class="profile-sidebar animate-in" style="animation-delay: 0.1s;">
+                <div class="info-card">
+                   <h3>About Me</h3>
+                   <p id="userAboutDisplay">Dedicated to bridging the gap between theoretical knowledge and practical engineering skills. Always looking for new ways to help my peers.</p>
+                   <div class="info-list">
+                      <div class="info-item">
+                         <i class="fa-solid fa-location-dot"></i>
+                         <span>Palestine, Gaza</span>
+                      </div>
+                      <div class="info-item">
+                         <i class="fa-solid fa-graduation-cap"></i>
+                         <span>4th Year Student</span>
+                      </div>
+                      <div class="info-item">
+                         <i class="fa-solid fa-calendar-days"></i>
+                         <span>Joined May 2024</span>
+                      </div>
+                   </div>
+                </div>
+
+                <div class="info-card stats-card">
+                   <h3>Statistics</h3>
+                   <div class="stats-grid">
+                      <div class="stat-item">
+                         <span class="val">12</span>
+                         <span class="lbl">Courses</span>
+                      </div>
+                      <div class="stat-item">
+                         <span class="val">45</span>
+                         <span class="lbl">Materials</span>
+                      </div>
+                      <div class="stat-item">
+                         <span class="val">1.2k</span>
+                         <span class="lbl">Reach</span>
+                      </div>
+                   </div>
+                </div>
+             </aside>
+
+             <!-- Main Profile Content -->
+             <div class="profile-main-area animate-in" style="animation-delay: 0.2s;">
+                <div class="profile-tabs">
+                   <button class="p-tab active" data-tab="activity">My Activity</button>
+                   <button class="p-tab" data-tab="courses">My Courses</button>
+                   <button class="p-tab" data-tab="materials">Uploaded Materials</button>
+                   <button class="p-tab" data-tab="settings">Settings</button>
+                </div>
+
+                <div class="tab-content active" id="activityTab">
+                   <div class="activity-feed">
+                      <div class="activity-item">
+                         <div class="activity-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                         <div class="activity-details">
+                            <p>You uploaded <strong>Data Structures Summary</strong> to Courses.</p>
+                            <span>2 hours ago</span>
+                         </div>
+                      </div>
+                      <div class="activity-item">
+                         <div class="activity-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                         <div class="activity-details">
+                            <p>You published a new course: <strong>Introduction to React Hooks</strong>.</p>
+                            <span>Yesterday</span>
+                         </div>
+                      </div>
+                      <div class="activity-item">
+                         <div class="activity-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                         <div class="activity-details">
+                            <p>You registered for the <strong>AI Workshop</strong> event.</p>
+                            <span>3 days ago</span>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+
+                <!-- Other tabs would go here -->
+                <div class="tab-content" id="coursesTab">
+                   <div class="empty-state">
+                      <i class="fa-solid fa-person-chalkboard"></i>
+                      <p>You haven't created any courses yet.</p>
+                      <a href="create-course.html" class="btn btn-primary btn-sm">Start Teaching</a>
+                   </div>
+                </div>
+             </div>
+          </div>
+        </div>
+
+        <footer class="dashboard-footer">
+          <p>&copy; 2026 EngHub Dashboard. Personal Portfolio.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/profile.js"></script>
+  </body>
+</html>

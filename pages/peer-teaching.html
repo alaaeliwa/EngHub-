@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/dashboard.css" />
+    <link rel="stylesheet" href="../style/peer-teaching.css" />
+
+    <title>Peer Teaching | EngHub</title>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <img src="../images/logo.png" alt="EngHub logo" />
+          </a>
+          <button id="sidebarClose" class="mobile-only btn-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <div class="nav-group">
+            <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="courses.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Courses & Materials</a>
+            <a href="workshops.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Workshops & Events</a>
+            <a href="search.html" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Search Functionality</a>
+            <a href="upload-materials.html" class="nav-item upload-nav"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Materials</a>
+            <a href="peer-teaching.html" class="nav-item active"><i class="fa-solid fa-person-chalkboard"></i> Peer Teaching</a>
+          </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+          <a href="login.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+          <div class="top-nav-left">
+            <button id="sidebarToggle" class="mobile-only btn-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="breadcrumb">
+               <span>Peer Teaching</span>
+            </div>
+          </div>
+          <div class="top-nav-right">
+             <div class="user-profile">
+               <div class="user-info">
+                 <span class="user-name">Alaa Eliwa</span>
+                 <span class="user-role">Student</span>
+               </div>
+               <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Alaa+Eliwa&background=066f6c&color=fff" alt="User"></div>
+             </div>
+          </div>
+        </header>
+
+        <div class="content-body">
+          <!-- Page Header -->
+          <section class="peer-header-section animate-in">
+             <div class="header-content">
+               <h1>Peer Teaching & Courses</h1>
+               <p>Learn from fellow students or share your expertise by creating your own courses.</p>
+             </div>
+             <a href="create-course.html" class="btn btn-primary btn-lg">
+               <i class="fa-solid fa-plus-circle"></i> Create Your Course
+             </a>
+          </section>
+
+          <!-- Featured/Search Bar -->
+          <div class="peer-controls animate-in">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search for a student course (e.g. Java Basics)...">
+            </div>
+            <div class="filter-tabs">
+              <button class="filter-btn active">All</button>
+              <button class="filter-btn">Programming</button>
+              <button class="filter-btn">Mathematics</button>
+              <button class="filter-btn">Engineering</button>
+            </div>
+          </div>
+
+          <!-- Courses Grid -->
+          <div class="courses-grid animate-in">
+            <!-- Course Card 1 -->
+            <div class="peer-course-card">
+              <div class="card-header">
+                <span class="price-tag free">Free</span>
+                <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80&w=400" alt="Course Image">
+              </div>
+              <div class="card-body">
+                <span class="cat">Programming</span>
+                <h3>Introduction to Java</h3>
+                <div class="instructor-info">
+                  <img src="https://ui-avatars.com/api/?name=Sami+Rami&background=f1822d&color=fff" alt="Instructor">
+                  <span>Sami Rami (4th Year)</span>
+                </div>
+                <div class="meta">
+                   <div class="rating"><i class="fa-solid fa-star"></i> 4.8 <span>(120 students)</span></div>
+                   <div class="level"><i class="fa-solid fa-signal"></i> Beginner</div>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-outline sm">Enroll Now</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="peer-course-card">
+              <div class="card-header">
+                <span class="price-tag paid">$15</span>
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=400" alt="Course Image">
+              </div>
+              <div class="card-body">
+                <span class="cat">Web Development</span>
+                <h3>Advanced React Patterns</h3>
+                <div class="instructor-info">
+                  <img src="https://ui-avatars.com/api/?name=Noor+Ali&background=066f6c&color=fff" alt="Instructor">
+                  <span>Noor Ali (3rd Year)</span>
+                </div>
+                <div class="meta">
+                   <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(85 students)</span></div>
+                   <div class="level"><i class="fa-solid fa-signal"></i> Advanced</div>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-primary sm">Buy Course</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="peer-course-card">
+              <div class="card-header">
+                <span class="price-tag free">Free</span>
+                <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=400" alt="Course Image">
+              </div>
+              <div class="card-body">
+                <span class="cat">Mathematics</span>
+                <h3>Calculus II for Engineers</h3>
+                <div class="instructor-info">
+                  <img src="https://ui-avatars.com/api/?name=Omar+Fadi&background=f1822d&color=fff" alt="Instructor">
+                  <span>Omar Fadi (2nd Year)</span>
+                </div>
+                <div class="meta">
+                   <div class="rating"><i class="fa-solid fa-star"></i> 4.7 <span>(210 students)</span></div>
+                   <div class="level"><i class="fa-solid fa-signal"></i> Intermediate</div>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-outline sm">Enroll Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="dashboard-footer">
+          <p>&copy; 2026 EngHub Dashboard. Engineering Excellence.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/peer-teaching.js"></script>
+  </body>
+</html>
