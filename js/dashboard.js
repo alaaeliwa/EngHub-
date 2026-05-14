@@ -26,6 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // ── Notifications ──
+    const btn = document.getElementById('notificationBtn');
+    const dropdown = document.getElementById('notificationDropdown');
+    if (btn && dropdown) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('active');
+      });
+      // Close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && e.target !== btn) {
+          dropdown.classList.remove('active');
+        }
+      });
+      // Prevent closing when clicking inside the dropdown
+      dropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+
     // Handle Search Functionality (Real-time Filtering)
     const searchInput = document.querySelector('.search-bar input');
     if (searchInput) {

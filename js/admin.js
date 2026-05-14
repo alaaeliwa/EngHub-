@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setAdminDate();
   initTabs();
   initSidebar();
+  initNotifications();
   renderOverview();
   renderUsers();
   renderCourses();
@@ -96,6 +97,28 @@ function initTabs() {
       document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
     });
   });
+}
+
+// ── Notifications ──
+function initNotifications() {
+  const btn = document.getElementById('notificationBtn');
+  const dropdown = document.getElementById('notificationDropdown');
+  if (btn && dropdown) {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('active');
+    });
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target) && e.target !== btn) {
+        dropdown.classList.remove('active');
+      }
+    });
+    // Prevent closing when clicking inside the dropdown
+    dropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
 }
 
 // ── Sidebar Mobile ──
