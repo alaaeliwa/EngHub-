@@ -110,41 +110,78 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.animationDelay = `${index * 0.1}s`;
     });
 
-    // Simulate Loading State for all sections
-    const simulateLoading = () => {
-        const sections = [
-            { id: 'materialsList', skeletons: '.material-skeleton', content: '.list-content' },
-            { id: 'courseGrid', skeletons: '.course-skeleton', content: '.grid-content' },
-            { id: 'workshopsList', skeletons: '.workshop-skeleton', content: '.list-content' }
-        ];
+    // ── Page Transitions ──
+    document.body.classList.add('page-fade-in');
+    
+    // Create transition overlay if it doesn't exist
+    let overlay = document.querySelector('.page-transition-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'page-transition-overlay';
+        document.body.appendChild(overlay);
+    }
 
-        sections.forEach(section => {
-            const container = document.getElementById(section.id);
-            if (!container) return;
+    // Handle all internal links for transitions
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !link.target) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                overlay.classList.add('active');
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 400);
+            });
+        }
+    });
 
-            const skeletons = container.querySelectorAll(section.skeletons);
-            const content = container.querySelector(section.content);
-            const emptyState = container.querySelector('.empty-state');
+    // ── Skeleton Loading Simulation ──
+    const initSkeletons = () => {
+        // Target all grids/lists that should have skeletons
+        const containers = document.querySelectorAll('.course-grid, #materialsList, #workshopsList, .results-grid, .stats-grid, .admin-table, .course-main-card');
+        
+        containers.forEach(container => {
+            if (container.children.length === 0) return;
 
-            // Show skeletons, hide content/empty
-            skeletons.forEach(s => s.classList.remove('hidden'));
-            if (content) content.classList.add('hidden');
-            if (emptyState) emptyState.classList.add('hidden');
-
-            // After 1.5s, hide skeletons and show content
-            setTimeout(() => {
-                skeletons.forEach(s => s.classList.add('hidden'));
-                
-                // For demo purposes: show content if it exists, otherwise show empty state
-                // Here we always show content if it exists in the dummy data
-                if (content) {
-                    content.classList.remove('hidden');
-                } else if (emptyState) {
-                    emptyState.classList.remove('hidden');
+            // Save original styles and hide real children
+            const originalChildren = Array.from(container.children);
+            originalChildren.forEach(child => {
+                if (!child.classList.contains('skeleton-card-placeholder')) {
+                    child.setAttribute('data-original-display', child.style.display || 'block');
+                    child.style.display = 'none';
                 }
-            }, 1500 + Math.random() * 1000);
+            });
+
+            // Create 3 skeleton placeholders if none exist
+            if (container.querySelectorAll('.skeleton-card-placeholder').length === 0) {
+                for (let i = 0; i < 3; i++) {
+                    const skeleton = document.createElement('div');
+                    skeleton.className = 'skeleton-card-placeholder';
+                    skeleton.style.cssText = 'padding:2rem; background:white; border-radius:20px; margin-bottom:1.5rem; border:1px solid #eee;';
+                    
+                    skeleton.innerHTML = `
+                        <div class="skeleton skeleton-img" style="margin-bottom: 1rem; height:150px;"></div>
+                        <div class="skeleton skeleton-title" style="height:20px; width:70%;"></div>
+                        <div class="skeleton skeleton-text" style="height:12px; width:90%;"></div>
+                        <div class="skeleton skeleton-text" style="height:12px; width:50%;"></div>
+                    `;
+                    container.appendChild(skeleton);
+                }
+            }
+
+            // Simulate loading and revealing
+            setTimeout(() => {
+                // Remove skeletons
+                container.querySelectorAll('.skeleton-card-placeholder').forEach(s => s.remove());
+                // Show real content using saved display attribute
+                originalChildren.forEach(child => {
+                    const originalDisplay = child.getAttribute('data-original-display');
+                    child.style.display = (originalDisplay === 'none') ? '' : originalDisplay;
+                    child.classList.add('animate-in');
+                });
+            }, 1200 + Math.random() * 600);
         });
     };
 
-    simulateLoading();
+    initSkeletons();
 });

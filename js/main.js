@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ── Premium Preloader Logic ──
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        document.body.classList.add('loading-active');
-        // Fake delay of 2.5 seconds to show the premium animation
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
-            document.body.classList.remove('loading-active');
-            document.body.classList.add('loaded-transition');
-            
-            // Remove from DOM after fade out finishes
-            setTimeout(() => {
-                preloader.remove();
-            }, 800);
-        }, 2500);
-    }
+    // ── Page Transitions ──
+    document.body.classList.add('page-fade-in');
+    const overlay = document.createElement('div');
+    overlay.className = 'page-transition-overlay';
+    document.body.appendChild(overlay);
+
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !link.target) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                overlay.classList.add('active');
+                setTimeout(() => window.location.href = href, 400);
+            });
+        }
+    });
 
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
