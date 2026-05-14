@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Simulate publishing delay
         setTimeout(() => {
-            alert('Congratulations! Your course has been published and is now visible to the EngHub community.');
+            showToast('Course published successfully!', 'success');
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
             submitBtn.disabled = false;

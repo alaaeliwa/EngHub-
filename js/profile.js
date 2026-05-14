@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveBtn.innerHTML = '<i class="fa-solid fa-check"></i> Save Changes';
             saveBtn.style.display = 'none';
             editBtn.style.display = 'inline-flex';
-            alert('Profile updated successfully!');
+            showToast('Profile updated successfully!', 'success');
         }, 1000);
     });
 });
