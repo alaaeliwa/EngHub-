@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ── Premium Preloader Logic ──
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        document.body.classList.add('loading-active');
+        // Fake delay of 2.5 seconds to show the premium animation
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            document.body.classList.remove('loading-active');
+            document.body.classList.add('loaded-transition');
+            
+            // Remove from DOM after fade out finishes
+            setTimeout(() => {
+                preloader.remove();
+            }, 800);
+        }, 2500);
+    }
+
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const nav = document.querySelector('.nav');
